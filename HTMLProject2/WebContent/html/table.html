@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- 
+	react.js
+	vue.js ====> jsx 	===> ES5 ==> ES6
+ -->
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+      <title>Heungmu Soft</title>  
+        <style>
+            tr,td {border:1px solid black;}
+        </style>
+        	</head>
+<body>
+  <table border=1 bordercoloer=black>
+            <thead> <!--  -->
+                <tr bgcolor="yellow"> <!--  tableRow  -->
+                    <th>객실</th> <!-- tableHead -->
+                    <th>대상</th>
+                    <th>크기</th>
+                    <th>가격</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>스탠다드 룸</td> <!-- tableData -->
+                    <td>여성 도미토리</td>
+                    <td rowspan="3">4인실</td> <!--  행 합치기 -->
+                    <td rowspan="4">1인 20,000원</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">디럭스 룸</td>
+                    <td>동성 도미토리</td>
+                </tr>
+                <tr>
+                    <td>온돌 룸</td>
+                </tr>
+                <tr>
+                    <td>스위트 룸</td>
+                    <td colspan="2">커플 룸 (2인실)</td> <!-- 열 합치기 -->
+                </tr>
+            </tbody>
+        </table>
+</body>
+</html>
+
+<!-- 
+	기본적으로 div로 css가 어려워서 목록 출력할 때 테이블을 많이 쓴다.?
+	
+	th 헤더 제목
+	tr 행 별로
+	td 행 각 데이터 
+
+ -->

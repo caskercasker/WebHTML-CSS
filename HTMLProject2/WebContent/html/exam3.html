@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- 
+	<ul> 				<ol> 				<table>       ========> block 속성 
+	===					===					=======
+	unOrderList 		OrderList			사각형 테두리로 출력 (신축성이 있어서 크기가 고정 되어 지지 않는다.내부 값에 따라 형태가 변한다.)
+	순서 없이 출력			순서대로 출력  
+	-					1-
+	-					2-
+	-					3-
+	====================================> 메뉴
+	table을 div로 대체해서 사용됨. 
+	
+	<dl> 			<dt	>			 <dd>
+	data list 		data title 		data description
+	
+	<dl>
+		<dt></dt>
+		<dd></dd>
+		</dl>
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>목록 출력</title>
+</head>
+<body>
+	<ul>
+		<li>자바</li>
+		<li>오라클</li>
+		<li>HTML&CSS</li>
+		<li>JSP</li>
+		<li>Spring</li>
+	</ul>
+	<ol type = "a">
+		<li>자바</li>
+		<li>오라클</li>
+		<li>HTML&CSS</li>
+		<li>JSP</li>
+		<li>Spring</li>
+	</ol>
+	<h1>과정 소개 </h1>
+	<dl>
+		<dt>자바</dt>
+		<dd>데이터를 처리 </dd>
+		<dt>오라클</dt>
+		<dd>데이터 저장, 공유</dd>
+		<dt>HTML/CSS</dt>
+		<dd>브라우저 화면 출력(화면 UI)</dd>
+		<dt>JSP</dt>
+		<dd>HTML+JAVA 연결</dd>
+		<dt>Spring</dt>
+		<dd>통합개발</dd>
+		</dl>
+</body>
+</html>
+
+<!--  자동 줄바꾼 블록속성, 아닌 경우 inline 속성  -->
