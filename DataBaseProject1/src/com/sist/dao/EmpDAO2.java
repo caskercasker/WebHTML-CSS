@@ -119,7 +119,7 @@ public class EmpDAO2 {
 		}catch(Exception ex)
 		{
 			// 에러 처리
-			ex.printStackTrace();
+			ex.printStackTrace(); //에러 메세지의 발생 근원지를 찾아 단계별로 에러 출력
 		}
 		finally
 		{
