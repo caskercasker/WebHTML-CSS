@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#t1 .aa{
+	background-color:blue
+}
+#t2 .aa{
+	background-color:yellow
+}
+
+#t1 td{
+	text-align: center
+}
+#t2 td{
+	text-align:right
+}
+
+/*{
+	font-family: 궁서체;
+	font-size: 8pt;
+}*/
+
+body{
+	font-family: 궁서체;
+	font-size: 8pt;
+}
+
+</style>
+<!-- 
+	1) 선택자
+		태그 ==> img{스타일 적용}
+		ID ==> #ID명{스타일 적용}
+		CLASS ==> .CLASS 명{스타일 적용}
+		여러개 태그 사용  ==> td,th,select{스타일 적용}
+		여러개 ID 사용 ==> #aa, #bb, #cc {} (공백으로서 소속관계가 생김  ',' 는 구분됨)
+		여러개 CLASS 사용 => .aa,.bb,.cc
+		계층구조  => table tr td
+		소속관계 => table > tr
+		가상 선택자 => a:hover		
+--> 
+</head>
+<body>
+	<table border=1 width=350 id="t1">
+		<tr class="aa">
+			<th>이름</th>
+			<th>주소</th>
+			<th>전화</th>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>서울</td>
+			<td>1111-11111</td>
+		</tr>
+	</table>
+	<table border=1 width=350 id="t2">
+		<tr class="aa">
+			<th>이름</th>
+			<th>주소</th>
+			<th>전화</th>
+		</tr>
+		<tr>
+			<td>고길동</td>
+			<td>경기</td>
+			<td>2222-2222</td>
+		</tr>
+	</table>
+	
+	<div></div>
+</body>
+</html>

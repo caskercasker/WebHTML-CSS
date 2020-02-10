@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- 
+	CSS
+	 = 외부 CSS => .css 파일
+	 	<link href=".css">
+	 = 내부 CSS
+	 	<head>
+	 		<style>
+	 		</style>
+	 	</head>
+	 = 인라인 CSS
+	 	<h1 style="">
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/*
+h1,h2,h3,h4,h5,h6{
+	color:blue;
+	font-family:맑은 고딕;
+	background-color:yellow;
+}*/
+/* Selector (선택자) */
+.h {
+	color:blue;
+	font-family:맑은 고딕;
+	background-color:yellow;
+}
+#pop{
+	color:red;
+	font-family:맑은 고딕;
+	background-color:green;
+}
+</style>
+</head>
+<body>
+	<!-- 
+		속성:값 ;
+		=== 사용자 정의는 없고 지정된 속성만 사용이 가능 	
+	 -->
+	<h1 id="pop">Hello CSS!!</h1>
+	<h1 class="h">Hello CSS!!</h1>
+	<h1>Hello CSS!!</h1>
+	<h1>Hello CSS!!</h1>
+	<h1 class="h">Hello CSS!!</h1>
+	<h1>Hello CSS!!</h1>
+</body>
+</html>

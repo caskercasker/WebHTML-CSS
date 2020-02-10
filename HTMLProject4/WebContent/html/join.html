@@ -4,21 +4,46 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="table.css">
+
+<script type="text/javascript"> 
+function postfind(){
+	window.open("post.jsp","postfind","width=450,height=400,scorllbars=yes");
+}</script>
 </head>
 <body>
 	<center>
 		<h3>일반회원 가입 신청</h3>
+		<!--  데이터전송 => form 태그 -->
+		<!--  
+			1. method
+				= GET => 보내는 데이터를 URL뒤에 첨부
+					(default) => 단순한 데이터 전송 (페이지번호, 영화번호)
+								단순한 검색 
+				= POST => 내부 네트워크를 통해서 전송 
+				보안,로그인.. (ID,Pwd) 데이터가 많은 경우
+				
+				==> 데이터를 서버에 보내는데 주소에 표시된다.
+			2. action : 데이터를 받는 파일
+			 ID,CLASS,NAME
+			 	===	===== ====  데이터를 다른 팡일로 보낼 경우
+			 	CSS
+			 		입력값이 없으면 안넘어감 
+			 		FORM tag 내에서 자동하는 required 
+			 	-->		 	
+	<!-- 		<form method ="GET" action ="join_ok.html"> -->	
+				<form method ="POST" action ="join_ok.html" name=frm>		
 		<table id="table_content" width=700>
-			<tr>
+			<tr class="dataTr">
 			<th width=25% align=right>일반회원아이디</th>
 				<td width=85% align=left>
-				<input type=text size=20>&nbsp;&nbsp;&nbsp;<input type=button value="중복아이디 검색">
+				<input type=text size=20 name="id" required autocomplete="off">&nbsp;&nbsp;&nbsp; <!-- 비밀번호에는 off가 default -->
+				<input type=button value="중복아이디 검색" >
 				</td>
 			</tr>
 			<tr>
 			<th width=15% align=right>일반회원이름</th>
 				<td width=85% align=left>
-				<input type=text size=20>
+				<input type=text size=20 name="name" required>
 				</td>
 			</tr>
 			<tr>
@@ -84,13 +109,14 @@
 						<tr>
 			<th width=15% align=right>우편번호</th>
 				<td width=85% align=left>
-				<input type=text size=20> <input type="submit" value="검색">
+				<input type=text size=20 readonly name=post>
+				 <input type="submit" value="검색" onclick='postfind()'>
 				</td>
 			</tr>
 						<tr>
 			<th width=15% align=right>주소</th>
-				<td width=85% align=left>
-				<input type=text size=20>
+				<td width=85% align=left >
+				<input type=text size=20 readonly name=addr1>
 				</td>
 			</tr>
 						<tr>
@@ -106,7 +132,8 @@
 				</td>
 			</tr>
 			
-		</table>	
+		</table>
+	   </form>	
 	</center>
 </body>
 </html>
