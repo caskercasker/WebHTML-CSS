@@ -17,6 +17,8 @@ public class BoardDetailServlet extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out=response.getWriter(); //브라우저가 읽어가는 메모리 위치
 		
+		
+
 		String no=request.getParameter("no");
 		//오라클 => 데이터를 가지고온다. 
 		BoardDAO dao = new BoardDAO();
@@ -56,8 +58,8 @@ public class BoardDetailServlet extends HttpServlet {
 		
 		out.println("<tr>");
 		out.println("<td colspan=4 align=right>");
-		out.println("<a href=\"#\">수정</a>&nbsp;");
-		out.println("<a href=\"#\">삭제</a>&nbsp;");
+		out.println("<a href=\"BoardUpdate?no="+vo.getNo()+"\">수정</a>&nbsp;");
+		out.println("<a href=\"BoardDelete?no="+vo.getNo()+"\">삭제</a>&nbsp;");
 		out.println("<a href=\"BoardListServlet\">목록</a>&nbsp;");
 		out.println("</td>");	
 		out.println("</tr>");
