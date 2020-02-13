@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- 
+	css 란 STYLE
+	외부 CSS : 파일
+		<link rel="stylesheet" href="css파일명"> 
+	내부 CSS :
+		<head>
+			<style type="text/css">
+			</style>
+		</head>
+	INLINE CSS
+		<div style="">
+	1) 외부,내부 CSS
+		==========
+		1. 선택자(Selector)	=> Jquery , Jsoup					: CSS 적용할 태그를 찾는다.
+			= tag :a, p, div .... 	tag 이름
+				
+				tag명{속성:값; 속성:값; 속성:값...}		//구분 ;
+					 ===
+					미리 정의가 되어 있다	(사용자 정의가 없다)
+					
+					값만 고쳐서 변경한다. (CSS)
+ 			= ID명 (중복이 없는 명칭) => 한번만 사용이 가능 
+ 				<div id="a b"> (X)
+
+				#ID명{속성:값; 속성:값; 속성:값...}
+
+ 			= Class 명 (중복이 있는 경우) => 여러개 사용이 가능
+ 				<div class="a b c"> 여러개 참고  a적용, b, c 적용을 구분지어서 처리 
+ 				
+ 				.class명 {속성:값; 속성:값; 속성:값...	}
+ 				
+ 			= 전체	*(모든 태그)  => 서체 통일,
+ 				*(속성:값; 속성:값; 속성:값...} 
+ 		
+ 			= 가상선택자
+ 				a:hover
+ 				h1:nth-child(2n) 
+ 				
+ 			= 소속 (관계 공백, div div#aa , #aa, #bb{ }
+ 				div #aa { 	} div에 소속되어 있는 aa 값 활용
+ 				HTML 계층 구조 
+ 			= 여러개 태그나 클래스, 아이디명 
+ 
+ 	<div> 블록속성
+ 		<span> 인라인 속성 
+ -->	
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+	width:100px;
+	height: 100px;
+	border: 1px solid green;
+}
+#aa{
+	border: 5px solid blue;
+}
+#bb{
+	border: 5px dotted blue;
+}
+#cc{
+	border: 5px dashed blue;
+}
+#dd{
+	border: 5px double blue;
+}
+#ee{
+	border: 5px groove blue;
+}
+#ff{
+	border: 5px ridge blue;
+}
+#aaa {
+	padding:20px; /*20px 30px 20px 30px*/
+	/*	top,left,bottom,right
+		padding: 20px, 10px 30px
+		paddig-left,padding-right,padding-top,padding-bottom
+		
+		6pt 8px 0.5em 50%
+		7pt 9px 0.55em 55%
+		8pt 11px 07em 70%
+		9pt 12px 0.75em 75%
+	*/
+	border:1px solid black;
+}
+span {
+	width:100px;
+	height: 100px;
+	border: 1px solid green;
+}
+</style>
+
+</head>
+<body>
+	<div id = "aaa">Box Model</div>
+	<div id = "aa"></div>
+	<div id = "bb"></div>	
+	<div id = "cc"></div>	
+	<div id = "dd"></div>	
+	<div id = "ee"></div>	
+	<div id = "ff"></div>	
+
+</body>
+</html>

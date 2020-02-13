@@ -28,6 +28,7 @@ public class MusicListServlet extends HttpServlet {
 		MusicDAO dao = new MusicDAO();
 		ArrayList<MusicVO> list = dao.musicListData(curpage);
 		
+			
 		int totalpage = dao.musicTotalPage();
 		
 		// 출력
