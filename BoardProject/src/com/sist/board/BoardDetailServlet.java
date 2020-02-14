@@ -16,9 +16,6 @@ public class BoardDetailServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out=response.getWriter(); //브라우저가 읽어가는 메모리 위치
-		
-		
-
 		String no=request.getParameter("no");
 		//오라클 => 데이터를 가지고온다. 
 		BoardDAO dao = new BoardDAO();

@@ -48,13 +48,13 @@ public class MusicDAO {
 		ArrayList<MusicVO> list = new ArrayList<MusicVO>();
 		try {
 			getConnection();
-			String sql = "SELECT rank,state,idcrement,poster,title,singer,album "
+			String sql = "SELECT rank,state,idcrement,poster,title,singer,album,mno "
 						+ "FROM music_genie "
 						+ "ORDER BY rank ASC";
 			ps = conn.prepareStatement(sql);	
 			ResultSet rs = ps.executeQuery();
 			
-			int rowSize = 50;
+			int rowSize = 15;
 			int pageStart = (page*rowSize)-rowSize;
 			
 			int i=0;   //50개씩 나누기
@@ -70,6 +70,7 @@ public class MusicDAO {
 					vo.setTitle(rs.getString(5));
 					vo.setSinger(rs.getString(6));
 					vo.setAlbum(rs.getString(7));
+					vo.setMno(rs.getInt(8));
 					list.add(vo);
 					i++;
 				}
@@ -89,7 +90,7 @@ public class MusicDAO {
 		int total=0;
 		try {
 			getConnection();
-			String sql="SELECT CEIL(COUNT(*)/50.0) "
+			String sql="SELECT CEIL(COUNT(*)/15.0) "
 						+"FROM music_genie";
 			ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
@@ -111,12 +112,11 @@ public class MusicDAO {
 		
 		try {
 			getConnection();
-			String sql = "SELECT rank,state,idcrement,title,singer,poster,key "
+			String sql = "SELECT rank,state,idcrement,title,singer,poster,key,mno,album "
 						+"FROM music_genie "
-						+"WHERE rank=?";
+						+"WHERE mno=?";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, no);
-			
 			ResultSet rs = ps.executeQuery();
 			
 			rs.next();
@@ -127,6 +127,8 @@ public class MusicDAO {
 			vo.setSinger(rs.getString(5));
 			vo.setPoster(rs.getString(6));
 			vo.setKey(rs.getString(7));
+			vo.setMno(rs.getInt(8));
+			vo.setAlbum(rs.getString(9));
 			rs.close();
 			
 			
