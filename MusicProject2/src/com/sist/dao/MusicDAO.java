@@ -45,7 +45,9 @@ public class MusicDAO {
 		ArrayList<MusicVO> list = new ArrayList<MusicVO>();
 		try {
 			getConnection();
-			String sql = "SELECT rank,state,idcrement,poster,title,singer,album,mno "
+			
+			
+			String sql = "SELECT rank,state,idcrement,poster,title,singer,album,mno,hit "
 						+ "FROM music_genie "
 						+ "ORDER BY rank ASC";
 			ps = conn.prepareStatement(sql);	
@@ -68,6 +70,7 @@ public class MusicDAO {
 					vo.setSinger(rs.getString(6));
 					vo.setAlbum(rs.getString(7));
 					vo.setMno(rs.getInt(8));
+					vo.setHit(rs.getInt(9));
 					list.add(vo);
 					i++;
 				}
@@ -106,10 +109,39 @@ public class MusicDAO {
 	
 	public MusicVO musicDetailData(int no){
 		MusicVO vo = new MusicVO();
-		
+		/*
+		 * DML (CURD)
+		 * SELECT
+		 * 	= SELECT FROM [WHERE GROUP BY HAVING ORDER BY]
+		 * INSERT
+		 * 	= INSERT INTO table(컬럼명1...) VALUES(값....) ==> DEFAULT
+		 *  = INSERT INTO table VALUES(값1..) = DEFAULT와 관련없이 무조건 첨부
+		 * UPDATE
+		 *  = UPDATE table명 SET 컬럼명 = 값, 컬럼명 값... 
+		 *    WHERE 조건
+		 * DELETE
+		 *  = DELETE FROM table 명
+		 *    WHERE 조건
+		 * 
+		 * 
+		 */
 		try {
 			getConnection();
-			String sql = "SELECT rank,state,idcrement,title,singer,poster,key,mno,album "
+	//	
+			String sql="UPDATE music_genie SET "
+					+"hit=hit+1 "
+					+"WHERE mno=?";
+			ps=conn.prepareStatement(sql);
+			//?에 값을 채운다.
+			ps.setInt(1, no);
+			ps.executeUpdate();
+			
+			/*
+			 * execute update = 오라클 데이터 변경 (INSERT UPDATE, DELETE) COMMIT 포함
+			 * executeQUery = 데이터변경이 없는 상태 (SELECT) COMMIT 포함이 되지 않은 상태 
+			 */
+	//		
+			sql = "SELECT rank,state,idcrement,title,singer,poster,key,mno,album,hit "
 						+"FROM music_genie "
 						+"WHERE mno=?";
 			ps = conn.prepareStatement(sql);
@@ -126,6 +158,7 @@ public class MusicDAO {
 			vo.setKey(rs.getString(7));
 			vo.setMno(rs.getInt(8));
 			vo.setAlbum(rs.getString(9));
+			vo.setHit(rs.getInt(10));
 			rs.close();
 			
 			
@@ -253,4 +286,35 @@ public class MusicDAO {
 			disConnection();
 		}
 	}
+	
+	//hit 수가  많은 제목의 == 5 (인라인 뷰)
+	public ArrayList<MusicVO> musicTop5(){
+		ArrayList<MusicVO> list = new ArrayList<MusicVO>();
+		try {
+			getConnection();
+			String sql="SELECT poster,title,no,rownum "
+					+"FROM (SELECT poster,title,RANK() OVER(ORDER BY hit DESC) as no FROM music_genie ORDER By hit DESC) "
+					+"WHERE rownum<=5";
+			ps=conn.prepareStatement(sql);
+			//실행
+			//row 가상 컬럼
+			//게시판 (이전게시물,다음게시물)
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				MusicVO vo = new MusicVO();
+				vo.setPoster(rs.getString(1));
+				vo.setTitle(rs.getString(2));
+				vo.setRank(rs.getInt(3));
+				list.add(vo);
+			}
+			rs.close();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally{
+			disConnection();
+		}
+		return list;
+	}	
 }

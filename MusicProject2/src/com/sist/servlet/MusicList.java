@@ -71,9 +71,10 @@ public class MusicList extends HttpServlet {
 		out.println("<tr class=danger>");
 		out.println("<th width=10% class=text-center>순위</th>");
 		out.println("<th width=10% class=text-center>등폭</th>");
-		out.println("<th width=20% class=text-center></th>");
-		out.println("<th width=35%>노래명</th>");
+		out.println("<th width=15% class=text-center></th>");
+		out.println("<th width=25%>노래명</th>");
 		out.println("<th width=25%>가수명</th>");
+		out.println("<th width=15%>조회</th>");
 		out.println("</tr>");
 		
 		for(MusicVO vo:list){
@@ -91,8 +92,9 @@ public class MusicList extends HttpServlet {
 			out.println("<td width=10% class=text-center>"+vo.getRank()+"</td>");
 			out.println("<td width=10% class=text-center>"+temp+"</td>");
 			out.println("<td width=20% class=text-center><img src="+vo.getPoster()+" width=35 heigt=35 class=img-circle></td>");
-			out.println("<td width=35%><a href=\"MusicDetail?mno="+vo.getMno()+"\">"+vo.getTitle()+"</a></td>");
+			out.println("<td width=25%><a href=\"MusicDetail?mno="+vo.getMno()+"\">"+vo.getTitle()+"</a></td>");
 			out.println("<td width=25%>"+vo.getSinger()+"</td>");
+			out.println("<td width=10%>"+vo.getHit()+"</td>");
 			out.println("</tr>");
 		}
 		
@@ -117,6 +119,7 @@ public class MusicList extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 	}
 	
 }

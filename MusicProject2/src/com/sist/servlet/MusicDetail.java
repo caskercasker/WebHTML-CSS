@@ -14,9 +14,6 @@ import javax.servlet.http.HttpSession;
 import com.sist.dao.*;
 import com.sun.xml.internal.ws.transport.http.HttpAdapter;
 
-/**
- * Servlet implementation class MusicDetail
- */
 @WebServlet("/MusicDetail")
 public class MusicDetail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,20 +24,18 @@ public class MusicDetail extends HttpServlet {
 		PrintWriter out = response.getWriter();
 				
 		String mno = request.getParameter("mno");
-		System.out.println(Integer.parseInt(mno));
 		MusicDAO dao = new MusicDAO();
 		MusicVO vo = dao.musicDetailData(Integer.parseInt(mno));
-		System.out.println(Integer.parseInt(mno));
 		ArrayList<MusicReplyVO> list = dao.replyListData(Integer.parseInt(mno));
+		ArrayList<MusicVO> topList = dao.musicTop5();
 		// table 형태를 div로 바꿔야함. 
-		System.out.println(Integer.parseInt(mno));
 		
-		
+		System.out.println(vo.getHit());
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<link rel=stylesheet href=\"css/bootstrap.min.css\">");
 		out.println("<style type=text/css>");
-		out.println(".col-sm-9{");
+		out.println(".col-md-9{");
 		out.println("margin: 0px auto;");
 		out.println("width:900px");
 		out.println("}");
@@ -79,7 +74,7 @@ public class MusicDetail extends HttpServlet {
 		out.println("</script>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("<div class=container>");
+		out.println("<div class=container-fluid>");
 		
 		/*
 		 * <select>
@@ -88,7 +83,7 @@ public class MusicDetail extends HttpServlet {
 		 * 
 		 */
 		out.println("<h1>&lt;"+vo.getTitle()+"&gt;상세보기</h1>");
-		out.println("<div class=col-sm-9>");
+		out.println("<div class=col-md-9>");
 		out.println("<table class=\"table table-bordered\">");
 		out.println("<tr>");
 		out.println("<td colspan=2 class=text-center>");
@@ -130,14 +125,14 @@ public class MusicDetail extends HttpServlet {
 		out.println("</tr>");
 		out.println("</table>");
 	// 댓글 div
-		out.println("<div style=\"height=20px\"><div>");
+		//out.println("<div style=\"height=20px\"></div>");
 		//댓글 출력
 		HttpSession session = request.getSession();  //session 을 얻어온다.
 		//request => session,cookie를 가지고 올 수 있다. 
 		String id=(String)session.getAttribute("id");
 		//null => 저장이 안된 상태,=> login 이 안된상태 (null), Login 이 된 상태 (등록 id)
 		
-		System.out.println(list.size());
+		//System.out.println(list.size());
 		if(list.size()<1){
 			out.println("<table class=\"table table-striped\">");
 			out.println("<tr>");
@@ -219,10 +214,22 @@ public class MusicDetail extends HttpServlet {
 		
 		out.println("</div>");
 		
-		out.println("<div class=col-sm-3>");
-		
+		out.println("<div class=col-md-3>");
+		out.println("<table class=\"table table-striped\">");
+		out.println("<caption>인기순위 5</caption>");
+		for(MusicVO tvo:topList){
+			out.println("<tr>");
+			out.println("<td>"+tvo.getRank()+"</td>");
+			out.println("<td>");
+			out.println("<img src=\""+tvo.getPoster()+"\" width=35 height=35>");
+			out.println("</td>");
+			out.println("<td>");
+			out.println("<td>"+tvo.getTitle()+"</td>");
+			out.println("</tr>");
+		}
+		out.println("</table>");
 		out.println("</div>");
-		out.println("</div>");
+		//out.println("</div>");
 		out.println("</body>");
 		out.println("</html>");
 	}

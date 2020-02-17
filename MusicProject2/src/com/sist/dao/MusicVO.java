@@ -10,7 +10,14 @@ public class MusicVO {
 	private int idcrement;
 	private String state;
 	private String key;
+	private int hit;
 	
+	public int getHit() {
+		return hit;
+	}
+	public void setHit(int hit) {
+		this.hit = hit;
+	}
 	public int getMno() {
 		return mno;
 	}
