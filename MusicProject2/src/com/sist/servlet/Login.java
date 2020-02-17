@@ -1,6 +1,8 @@
 package com.sist.servlet;
 
 import java.io.*;
+import java.util.StringTokenizer;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -90,7 +92,10 @@ public class Login extends HttpServlet {
 			HttpSession session = request.getSession();  //전역변수 형태, Static
 			// id,name
 			session.setAttribute("id", id);
-			session.setAttribute("name", result);
+			StringTokenizer st=new StringTokenizer(result,"|");
+			session.setAttribute("name", st.nextToken());
+			session.setAttribute("sex", st.nextToken());
+			
 			//(중복없는 키와, 값으로 이루어진 컬렉션) MAP 
 			//session, request, response.
 			

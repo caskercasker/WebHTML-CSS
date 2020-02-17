@@ -1,8 +1,5 @@
 package com.sist.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.util.*;
 import java.sql.*;
 public class MusicDAO {
@@ -159,7 +156,7 @@ public class MusicDAO {
 			if(count==0){
 				result="NOID";					
 			}else{
-				sql="SELECT pwd,name FROM music_member "
+				sql="SELECT pwd,name,sex FROM music_member "
 						+"WHERE id=?";
 				ps=conn.prepareStatement(sql);
 				ps.setString(1, id);
@@ -167,10 +164,11 @@ public class MusicDAO {
 				rs.next();
 				String db_pwd=rs.getString(1);
 				String name=rs.getString(2);
+				String sex = rs.getString(3);
 				rs.close();
 				
 				if(db_pwd.equals(pwd)){
-					result=name;
+					result=name+"|"+sex;
 				}else{
 					result="NOPWD";
 				}
@@ -188,4 +186,71 @@ public class MusicDAO {
 	// 댓글 수정 		UPDATE
 	// 댓글 삭제		DELETE
 	// 댓글 보기		SELECT => WHERE 
+	
+	public ArrayList<MusicReplyVO> replyListData(int mno){
+		ArrayList<MusicReplyVO> list = new ArrayList<MusicReplyVO>();
+		try{
+			getConnection();
+			String sql="SELECT no,id,name,msg,TO_CHAR(regdate,'YYYY-MM-DD HH24:MI:SS'), "
+					+"(SELECT sex FROM music_member mm WHERE mm.id=mr.id) "
+					+"FROM music_reply mr "
+					+"WHERE mno=?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, mno);
+			//실행
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				MusicReplyVO vo = new MusicReplyVO();
+				vo.setNo(rs.getInt(1));
+				vo.setId(rs.getString(2));
+				vo.setName(rs.getString(3));
+				vo.setMsg(rs.getString(4));
+				vo.setDbDay(rs.getString(5));
+				vo.setSex(rs.getString(6));
+				
+				list.add(vo);
+			}
+			rs.close();
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}finally{
+			disConnection();
+		}
+		return list;		
+	}
+	
+	public void replyInsert(MusicReplyVO vo){
+		try {
+			getConnection();
+			String sql="INSERT INTO music_reply VALUES (mr_no_seq.nextval,?,?,?,?,SYSDATE)";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, vo.getMno());
+			ps.setString(2, vo.getId());
+			ps.setString(3, vo.getName());
+			ps.setString(4, vo.getMsg());
+			
+			ps.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally{
+			disConnection();
+		}
+	}
+
+	public void replyDelete(int no){
+		try {
+			getConnection();
+			String sql="DELETE FROM music_reply WHERE no=?";
+					
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, no);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally{
+			disConnection();
+		}
+	}
 }

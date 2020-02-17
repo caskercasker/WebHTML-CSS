@@ -31,8 +31,17 @@ public class MusicReplyVO {
 	private String name;
 	private String msg;
 	private Date regdate;
-	private String dbDay;
 	
+	// 프로그램에서 필요한 변수 설정 
+	private String dbDay;
+	private String sex;
+	
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 	public int getNo() {
 		return no;
 	}
