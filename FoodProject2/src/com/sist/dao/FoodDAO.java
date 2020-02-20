@@ -11,7 +11,7 @@ public class FoodDAO {
 	private PreparedStatement ps;
 	private Statement stat;
 	private static FoodDAO dao;
-//	private final String URL="jdbc:oracle:thin:@localhost:1521:XE";
+	private final String URL="jdbc:oracle:thin:@localhost:1521:XE";
 //	public FoodDAO(){
 //		try {
 //			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -32,9 +32,9 @@ public class FoodDAO {
 			Context c=(Context)init.lookup("java://comp//env"); 
 			DataSource ds=(DataSource)c.lookup("jdbc/oracle");
 			conn=ds.getConnection();
-			//Context c=(Context)init.lookup("java://comp//env"); 
-			DataSource dsp=(DataSource)c.lookup("java://comp//env//jdbc/oracle");   //경로 설정 가능 / 
-			
+//			//Context c=(Context)init.lookup("java://comp//env"); 
+//			DataSource dsp=(DataSource)c.lookup("java://comp//env//jdbc/oracle");   //경로 설정 가능 / 
+//			
 			} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -86,7 +86,8 @@ public class FoodDAO {
 		try {
 			getConnection();
 			String sql = "SELECT cateno,title,subject,poster "
-						+"FROM category";
+						+"FROM category "
+						+"ORDER BY cateno ASC";
 			ps = conn.prepareStatement(sql);
 			
 			ResultSet rs = ps.executeQuery();
@@ -107,6 +108,38 @@ public class FoodDAO {
 		}
 				
 		return list;
+	}
+	
+public void FoodHouseInsert(FoodHouseVO vo){
+		
+		
+		try {
+			getConnection();
+			String sql="INSERT INTO FoodHouse VALUES("
+					+"foodhouse_no_seq.nextval,?,?,?,?,?,?,?,?,?,?,?,'none')";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, vo.getCno());
+			ps.setString(2, vo.getTitle());
+			ps.setDouble(3, vo.getScore());
+			ps.setString(4, vo.getAddress());
+			ps.setString(5, vo.getTel());
+			ps.setString(6, vo.getType());
+			ps.setString(7, vo.getPrice());
+			ps.setString(8, vo.getImage());
+			
+			ps.setInt(9, vo.getGood());
+			ps.setInt(10, vo.getSoso());
+			ps.setInt(11, vo.getBad());
+			
+			ps.executeUpdate();
+			
+					
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally{
+			disConnection();
+		}
 	}
 	
 }

@@ -24,10 +24,17 @@ public class FoodMainServlet extends HttpServlet {
 			out.println("<html>");
 			out.println("<head>");
 			out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">");
+			out.println("<style type=text/css>");
+			out.println(".row{");
+			out.println("margin:0px auto;");
+			out.println("width:1200px;");
+			out.println("}");
+			out.println("</style>");
 			out.println("</head>");
 			out.println("<body>");
-			out.println("<div class=container>");
+			out.println("<div class=container>");  //container-fluid 전체 화면 덮기 
 			out.println("<div class=row>");
+			out.println("<h1>믿고 보는 맛집 리스트</h1>");
 			//for
 			/*
 			 * <div class="panel panel-default">
@@ -36,16 +43,32 @@ public class FoodMainServlet extends HttpServlet {
 			  </div>s
 			 * 
 			 */
-			for(CategoryVO vo:list){
-			out.println("<div class=\"col-md-3\">");
-			out.println("<div class=\"panel panel-primary\">");
-			out.println("<div class=\"panel-heading\">"+vo.getTitle()+"</div>");
-			out.println("<div class=\"panel-body\">");
-			out.println("<img src=\""+vo.getPoster()+"\" width=100%>");
 			
-			out.println("</div>");
-			out.println("</div>");
-			out.println("</div>");
+			int i=0;
+			String color="";
+			for(CategoryVO vo:list){
+				
+				i=i%3;
+				if(i==0)
+					color="panel panel-danger";
+				else if(i==1)
+					color="panel panel-primary";
+				else if(i==2)
+					color="panel panel-success";
+//				else if(i==3)
+//					color="panel panel-info";
+				out.println("<div class=\"col-md-4\">");
+				out.println("<div class=\""+color+"\">");
+				out.println("<div class=\"panel-heading\">"+vo.getTitle()+"<br>"+vo.getSubject()+"</div>");
+				out.println("<div class=\"panel-body\">");
+				out.println("<a href=\"FoodCateListServlet?cno="+vo.getCateno()+"\">");
+				
+				out.println("<img src=\""+vo.getPoster()+"\" width=100% class=img-rounded>");
+				out.println("</a>");
+				out.println("</div>");
+				out.println("</div>");
+				out.println("</div>");
+				i++;
 			}
 			//
 			out.println("</div>");
