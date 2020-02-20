@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="BoardProject/src"/>
+	<classpathentry kind="src" path="DataBaseJoinProject/src"/>
+	<classpathentry kind="src" path="DataBaseProject1/src"/>
+	<classpathentry kind="src" path="FoodProject/src"/>
+	<classpathentry kind="src" path="HTMLProject4/src"/>
+	<classpathentry kind="src" path="MovieProject/src"/>
+	<classpathentry kind="src" path="MusicProject/src"/>
+	<classpathentry kind="src" path="MusicProject2/src"/>
+	<classpathentry kind="src" path="SequenceProject/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="BoardProject/build/classes"/>
+</classpath>

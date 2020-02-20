@@ -16,6 +16,7 @@ public class MovieDAO{
 	private PreparedStatement ps;
 	//URL 주소
 	private final String URL="jdbc:oracle:thin:@localhost:1521:XE";
+
 	private static MovieDAO dao;
 	
 	// 드라이버 등록 => 한번 수행
