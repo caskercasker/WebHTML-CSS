@@ -23,5 +23,8 @@ public class JsonMain {
 			System.out.println("rank="+l);
 			System.out.println("title="+s);
 		}
+		
+		
+		
 	}
 }
