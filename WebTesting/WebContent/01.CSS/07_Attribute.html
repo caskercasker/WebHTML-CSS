@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+	선택자[속성] { } : 속성명이 있는 태그를 선택
+	선택자[속성 = "값"] { } : 속성 값과 value가 일치하는 태그 선택  
+	선택자[속성 $= "값"] { } : 속성 값과 value에 해당하는 문자가 끝나는 태그 선택
+	선택자[속성 ^= "값"] { } : 속성 값과 value에 해당하는 문자로 시작하는 태그 선택
+	선택자[속성 *= "값"] { } : 속성 값과 value에 해당하는 문자가 포함하는 태그를 선택  
+		
+	//아래 두개는 굳이 안해도 됨	
+	선택자[속성 |= "값"] { } :  속성 값과 value에 해당하는 문자로 시작하는 태그 선택 ie8 version up
+	선택자[속성 ~= "값"] { } :  속성 값과 value에 해당하는 문자가 포함하는 태그 선택 ie8 version up 
+
+*/
+	#simpletext1 {
+		color:aqua;
+	}
+	.ccpp { 
+		color: green;
+	}
+	
+	form[input=class]{
+		color: green;
+	}
+	#two > input[type]{
+		color: orange;
+	}
+	
+	#two > input[type="text"]{
+		font-size: 20px;
+	}
+	
+	#two > label{
+		color:blue;
+	}
+	
+	#one > span[id ^="complete"]{
+		/* 시작문자	 선택자[속성 |= "값"] { }*/
+		color: pink;
+	}
+	
+	#one > span[id $="t1"]{
+		/* 끝문자  	*/
+		color:red;
+		font-size: 20px;
+	}
+	
+	#one > span[id *="text"]{
+		/*포함문자 	선택자[속성 ~= "값"] { } : */
+		background-color: yellow;
+	}
+</style>
+</head>
+<body>
+	<div id="one">
+		<span id="simpletext1">SIMPLETEXT1</span><br/>
+		<span id="simpletext2">SIMPLETEXT2</span><br/>
+		<span id="completetext1">COMPLETETEXT1</span><br/>
+		<span id="completetext2">COMPLETETEXT2</span><br/>
+		<span id="complete">COMPLETE</span><br/>
+	</div>
+	<br/><br/>
+	
+	<form id="two">
+		<label> 이름  </label>
+		<input class="ccpp" type="text"/>
+		<br/><br/>
+		<label> 아이디</label>
+		<input type="text"/>
+		<br/><br/>
+		<label> 비밀번호 </label>
+		<input type="password"/>
+		<br/><br/>
+		<label> 전화번호 </label>
+		<input type="tel"/>
+		<br/><br/>
+	</form>
+	
+	<br/><br/>
+	
+	<img width=200 height=100 alt="이미지 중입니다."/>
+</body>
+</html>
