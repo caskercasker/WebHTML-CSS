@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+.head{
+	text-align:right;
+	width: 400px; height: 20px;
+	margin: 0px auto;
+	color: blue;
+}
+#board {
+	border: solid 2px black;
+	width : 400px; height: 270px;	
+	margin: 0px auto;
+} 
+.from_style  div{
+	border: solid 2px blue;
+	width: 400px; height: 25px;
+	float:left;
+}
+.row_p{
+	border: solid 2px black;
+	width : 270px; height: 25px;
+	float: left;
+}
+.row {
+	border:solid 2px black;
+	width:120px; height: 25px;
+	float:left;
+	text-align:center;
+}
+.form_style {
+	border: solid 2px black;
+	width : 400px; height: 270px;	
+}
+.content{
+	border: solid 1px black;
+	width: 400px; height: 185px;
+	margin: 0px auto;
+}
+.form_style > .button{
+	border: solid 1px black;
+	width: 400px; height: 25px;
+	text-align:center;
+}
+.row_c {
+	border:solid 2px black;
+	width:120px; height: 95px;
+	float:left;
+	text-align:center;
+}
+
+.row_cp{
+	border:solid 2px black;
+	width:270px; height: 95px;
+	float:left;
+}

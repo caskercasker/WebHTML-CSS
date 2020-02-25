@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성</title>
+<style type="text/css">
+	div{
+		width: 100px;
+		height: 100px;
+	}
+	
+	div:NTH-CHILD(1) {
+		background-color: #FF0000;
+		color: #FFFFFF;
+		text-align: center;
+		border: 5px solid #FF8D00; 
+		box-sizing: content-box; /* 박스 라인 두께가 밖으로 적용된다. 기본값 */
+
+	}
+	
+	div:NTH-CHILD(2) {
+		background-color: #00FF00;
+		color: #FFFFFF;
+		text-align: center;
+		border: 5px solid #FF8D00;
+		margin-top: 10px;
+		box-sizing: border-box;		/*라인두께가 밖으로 적용되지 않고 안으로 적용되어 정확한 크기로 나옴 */
+	
+	}
+	
+	div:NTH-CHILD(7) {
+		background-color: #0000FF;
+		color: #FFFFFF;
+		text-align: center;
+		border: 5px solid #FF8D00;
+		margin-top: 10px;
+		display: inline;
+		float:left;		
+	}
+	
+	div:NTH-CHILD(8) {
+		background-color: #FF00FF;
+		color: #FFFFFF;
+		text-align: center;
+		border: 5px solid #FF8D00;
+		margin-top: 10px;		
+		
+		display: inline-block;  /*float 과 block 속성이 모두 적용된 형태 */
+	}
+	
+	div:NTH-CHILD(9) {
+		background-color: #FF00FF;
+		color: #FFFFFF;
+		text-align: center;
+		border: 5px solid #FF8D00;
+		margin-top: 10px;		
+		display: block;	
+		float:left;
+	}
+</style>
+</head>
+<body>
+	<div>content1</div>
+	<div>content2</div>
+	<div>content3</div>
+	<div>content4</div>
+	<div>content5</div>
+	<div>content6</div>
+	<div>content7</div>
+	<div>content8</div>
+	<div>content9</div>
+</body>
+</html>
