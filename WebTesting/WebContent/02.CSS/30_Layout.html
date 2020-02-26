@@ -3,6 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <title>웹포트</title>
+<link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lacquer&display=swap" rel="stylesheet">
+
+
+<style type="text/css">
+	header{
+		width: 90%; margin: 0px auto;
+		border: 1px solid #CCCCCC;
+		height: 200px;
+	}
+	header > #gnb{
+		width: 400px; border: 1px solid blue;
+		float:left; 		
+	}
+	
+	header > #lnb{
+		width: 400px; border: 1px solid red; 
+		float: right; position: relative; top: 100px; 
+	}	
+	
+	header li{list-style-type: none;}
+	
+	header a{text-decoration: none; font-family: 'Slabo 27px';}
+	
+	header > #gnb li, header > #lnb li{
+		border: 1px dotted #CCCCCC; width: 60px; height: 30px;
+		text-align: center; line-height: 30px; float:left;
+	}
+	
+	header > #gnb > ul{
+		padding-left: 0px;
+	}
+	header > #lnb > ul{
+		left: 60px;
+	}
+	
+	#content{
+		width: 90%; margin: 2px auto;
+		border: 1px solid #CCCCCC;
+		overflow: hidden;
+	}
+	
+	#content > #section, #content > #aside {
+		height: 600px; border: 1px solid #CCCCCC; float:left;
+		font-weight: bold; margin: 5px; font-size: 1.2em;
+	}
+	
+	#content > #section{ width:78%; font-family: 'Poppins';}
+	#content > #aside { width:18%; font-family: 'Lacquer';}
+	
+	footer{
+		width: 90%; height: 200px; border: 1px solid #CCCCCC; margin: 2px auto;
+		font-weight: bold; font-size: 2.0em; text-align:center; height: 200px;
+	}
+</style>
 </head>
 <body>
  	<header>

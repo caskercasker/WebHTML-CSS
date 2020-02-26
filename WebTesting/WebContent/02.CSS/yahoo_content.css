@@ -1,0 +1,65 @@
+@CHARSET "UTF-8";
+
+#content {
+	width:1024px; border:0px solid red;
+	margin: 0px auto;
+	overflow:hidden;
+}
+#content > #main_nav,
+#content > #main,
+#content > #main_banner{
+	border: 0px solid blue;
+	float:left;
+	margin-left:5px;
+}
+
+#content > #main_nav{width: 200px;	margin-top:10px;}
+#content > #main_nav li{height:35px;}
+
+#content > #main{width: 600px;}
+#content > #main > div{ 
+	border: 1px solid #CCCCCC;
+	width: 595px;
+	margin-top:10px;
+}
+#content > #main > div:NTH-CHILD(1){
+	height:300px;
+}
+#content > #main > div:NTH-CHILD(2){
+	height:200px;
+}
+#content > #main > div:NTH-CHILD(3){
+	height:70px; background-color: #500095;
+	line-height: 70px;
+}
+#content > #main > div:NTH-CHILD(3) li{
+	float: left; font-size: 1.1em; margin-left:15px; 
+	color: #ffffff;
+}
+
+#content > #main > div:NTH-CHILD(3) ~div {
+	height:100px;
+}
+
+#content > #main_banner{width: 200px;}
+
+#content > #main_banner > div{
+	width: 198px; border: 1px solid #CCCCCC;
+		margin-top:10px;
+}
+
+#content > #main_banner > div:NTH-CHILD(1),
+#content > #main_banner > div:NTH-CHILD(2) {
+	height: 150px;
+}
+#content > #main_banner > div:NTH-CHILD(3){
+	height: 200px;
+}
+#content > #main_banner > div:NTH-CHILD(4){
+	height: 250px;
+}
+#content > #main_banner > div:NTH-CHILD(5){
+	height: 300px;
+}
+
+

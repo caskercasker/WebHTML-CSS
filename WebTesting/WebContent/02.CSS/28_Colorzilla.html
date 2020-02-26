@@ -4,11 +4,47 @@
 <head>
 <meta charset="UTF-8">
 <title>외부 글꼴</title>
+<style type="text/css">
+	#wrap {
+		width: 800px; margin: 0px auto;
+		border: 0px solid red;
+		overflow:hidden;
+	}
+	
+	#wrap > ul > li {
+		width:140px; height: 60px;
+		border: 1px solid #CCCCCC;
+		list-style-type: none; float:left;
+		
+		text-align: center; line-height: 60px;
+		font-size: 1.5em; color:#FFFFFF;
+		font-weight: bold;
+		
+		border-left-width: 0px;
+		
+		/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#d7dbdd+12,5ca1c4+48,a6d19c+98&0.32+46,1+46,0.97+81 */
+		background: -moz-linear-gradient(top,  rgba(215,219,221,1) 12%, rgba(99,164,197,1) 46%, rgba(92,161,196,1) 48%, rgba(141,193,170,0.97) 81%, rgba(166,209,156,0.97) 98%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  rgba(215,219,221,1) 12%,rgba(99,164,197,1) 46%,rgba(92,161,196,1) 48%,rgba(141,193,170,0.97) 81%,rgba(166,209,156,0.97) 98%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  rgba(215,219,221,1) 12%,rgba(99,164,197,1) 46%,rgba(92,161,196,1) 48%,rgba(141,193,170,0.97) 81%,rgba(166,209,156,0.97) 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7dbdd', endColorstr='#f7a6d19c',GradientType=0 ); /* IE6-9 */
+	}
+	
+		/*https://www.colorzilla.com/gradient-editor/ */
+	#wrap > ul > li:hover{
+		/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c3d9ff+1,acd1e5+36,0b1d5e+93 */
+		background: rgb(195,217,255); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(195,217,255,1) 1%, rgba(172,209,229,1) 36%, rgba(11,29,94,1) 93%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  rgba(195,217,255,1) 1%,rgba(172,209,229,1) 36%,rgba(11,29,94,1) 93%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  rgba(195,217,255,1) 1%,rgba(172,209,229,1) 36%,rgba(11,29,94,1) 93%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c3d9ff', endColorstr='#0b1d5e',GradientType=0 ); /* IE6-9 */
+	}
+	
+</style>
 </head>
 <body>
   <div id="wrap">
         <ul>
-            <li>menu1</li>
+            <li style="border-left-width: 1px;">menu1</li>
             <li>menu2</li>
             <li>menu3</li>
             <li>menu4</li>

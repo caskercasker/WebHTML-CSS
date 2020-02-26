@@ -3,6 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <title>레이 아웃</title>
+<style type="text/css">
+	body{
+		font-weight: bold;
+	}
+
+	div{
+		border: 1px solid #CCCCCC;
+		margin: 5px; text-align:center;
+	}
+	#con {
+		width:1024px; margin: 0px auto;
+	}
+	
+	#con > #header{
+		height:250px; line-height: 300px;
+		font-size: 2.0em; font-weight: bold;
+	}
+	 #con > #nav{
+	 	height:150px; 
+	 }
+	 #con > #nav > p{
+	 	font-size:1.5em; 
+	 }
+
+	 #con > #nav > ul > li{
+	 	width : 180px; height: 40px;
+	 	border: 1px solid #DDDDDD; float:left;
+	 	list-style-type:none; line-height:40px; text-align: center;
+	 	font-size:18px; border-left-style: 0px;
+	 }
+	 
+	 #con > #wrap{
+	 	overflow:hidden;
+	 }
+	 #wrap > #content {
+	 	width : 805px;
+	 }
+	 #wrap > #banner {
+	 	width : 180px;
+	 }
+	  
+	 #wrap > #content, #wrap > #banner{
+	 	height: 500px; float: left;	
+	 	line-height:500px; 
+	 	font-size:1.5em; 
+	 }
+	 
+	 #con > #footer {
+	 	height: 200px; font-size:1.5em; 
+	    line-height: 300px;
+	 }
+</style>
 </head>
 <body>
 	<div id="con">
@@ -11,7 +63,7 @@
 	       <div id="nav">
 		           <p>NAVIGATION</p>
 		           <ul>
-		               <li>menu1</li>
+		               <li style="border-left-style: 1px; margin-left: 20px;">menu1</li>
 		               <li>menu2</li>
 		               <li>menu3</li>
 		               <li>menu4</li>
