@@ -1,0 +1,142 @@
+@CHARSET "UTF-8";
+ *{margin: 0px auto; text-decoration: none; font-family: 'Noto Sans KR';}
+ li{list-style-type: none;}
+header {
+	border: 0px solid red;
+	width: 100%;
+	margin: 0px auto;
+/* 	background: url(./../images/back.jpeg) no-repeat ;
+	background-size : cover; */
+}
+.visual_info{
+	border: 0px solid yellow;
+	margin:0px auto;
+	position: absolute;
+	width: 450px;
+	hegith: 200px;
+	background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.2);
+    padding: 30px 40px;
+}
+
+header > #mainHeader > .logo{
+	border: 0px solid green;
+	width: 100%;
+	overflow:hidden;
+	
+}
+
+header> #mainHeader > .logo > div{
+	border: 0px solid green;
+	float:left;
+}
+
+header> #mainHeader > .logo > .name{
+	margin-left: 10px;
+	font-family: 'Caladea';
+	font-weight:bold;
+	font-size: 3.0em;
+}
+	
+
+
+header> #mainHeader > .logo > .login{
+	border: 0px solid green;
+	margin-top: 10px;
+	margin-right: 50px;
+	float:right;
+	overflow:hidden;
+}
+
+header> #mainHeader > .logo > .login li{
+	border: 0px solid green;
+	float:left;
+	margin-left: 15px;
+}
+
+header > #mainHeader > .search{
+	border: 0px solid navy;
+	width: 100%;
+	height: 300px;
+	margin:0px auto;
+	background: url(./../images/back.jpeg) no-repeat ;
+	background-size : cover; 
+	overflow:hidden;
+}
+
+header > #mainHeader > .search >.bar > input{
+	border: 0px solid cyan;
+	float:left;
+	
+}
+
+header > #mainHeader > .search > .bar{
+	border: 0px solid pink;
+	width : 700px; height: 100px;
+	overflow:hidden;
+	margin: 0px auto;
+	margin-top: 80px;
+}
+
+/* header > #mainHeader > .search > .bar{
+	width: 600px; height: 100px;
+	border: 1px solid pink;
+	margin: 0px auto;
+	overflow:hidden;
+} */
+
+header > #mainHeader > .search > .bar input[type="text"]{
+	width:500px; font-size: 30px; border: 0px solid #CF22FF;
+	border-radius: 15px 15px 15px 15px;
+	height: 50px;  
+	margin-top: 20px;
+	margin-left: 30px;
+}
+
+header > #mainHeader > .search > .bar input[type="button"]{
+	width: 120px; height: 50px;
+	border-radius: 15px 15px 15px 15px;
+	background-color:orange;
+	font-size: 1.2em;
+	margin-left:15px;
+	margin-top: 20px;
+}
+
+header > #mainHeader > .category{
+	border: 0px solid yellow;
+	height: 50px;
+	overflow:hidden;
+}
+
+/* header > #mainHeader > .category li{
+	float:right; font-size: 1.2em;
+	border: 1px solid maroon;
+
+	margin-right:10px;
+} */
+header > #mainHeader > .category > .list button{
+	display: inline-block;
+	float:right; font-size: 1.2em;
+	border: 0px solid maroon;
+	border-radius: 15px 15px 15px 15px;
+	margin-right:10px;
+}
+
+
+header > #mainHeader > .category > .visual_Info{
+	border: 0px solid yellow;
+	margin:0px auto;
+	position: absolute;
+	left:700px;
+	top: 250px;
+	width: 450px;
+	hegith: 200px;
+	background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.2);
+    border-radius: 15px 15px 15px 15px;
+    padding: 30px 40px;
+}
+
+header > #mainHeader > .category > .visual_Info > .roundButton > button{
+	float:right;
+}

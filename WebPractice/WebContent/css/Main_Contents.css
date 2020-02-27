@@ -1,0 +1,129 @@
+@CHARSET "UTF-8";
+ *{margin: 0px auto; text-decoration: none; font-family: 'Noto Sans KR';}
+ li{list-style-type: none;}
+button{
+	border: 0 none;
+    background-color: transparent;
+    cursor: pointer;
+ 
+}
+
+#Content {
+	border: 0px solid green;
+	width: 1550px;
+	margin:0px auto;
+	overflow:hidden;
+}
+
+#Content > .area1,
+#Content > .area2,
+#Content > .area3{
+	float:left;
+	border: 0px solid orange;
+	margin:5px;
+	background-color: #f0f0f0;
+}
+
+#Content > .area2 > .tag{
+	margin-top: 10px;
+	border : 0px solid olive;
+	width: 1050px;
+	overflow:hidden;
+}
+
+#Content > .area2 > .tag li{
+	border: 1px solid #CCCCCC;
+	margin-left:15px;
+	float:left;
+	font-weight: bold;
+	font-size: 1.3em;
+	color: gray;
+	transform: translate3d(0,0,0);
+}
+
+
+#Content > .area2 > .box_calendar{
+	margin-top: 10px;
+	border : 0px solid olive;
+	width: 1050px;
+	height: 350px;
+	overflow:hidden;
+}
+#Content > .area2 > .box_calendar > .calendar_top{
+	border :0px solid red;
+	width: 200px;
+	margin:0px auto;
+	overflow:hidden;
+	
+	
+}
+
+#Content > .area2 > .box_calendar > .calendar_top > button,h2{
+ 	float:left;
+ 	margin-left: 15px;
+}
+
+#Content > .area2 > .box_calendar > .calendar_top > h2{
+	margin-o	
+}
+
+#Content > .area2 > .box_calendar > .calendar_top > button{
+	margin-top:5px;
+	font-size: 1.5em;
+}
+
+
+
+#Content > .area2 > .box_calendar > .calendar_date{
+	margin-top:20px;
+	border: 0px solid cyan;
+	height: 50px;
+}
+
+#Content > .area2 > .box_calendar > .calendar_date > button{
+    width: 25px;
+    height: 25px;
+    box-sizing: border-box;
+    font-size: 2.0em;
+    font-weight: 400;
+
+}
+
+#Content > .area2 > .box_calendar > .festival_sample{
+	margin-top:30px;
+	border: 0px solid red;
+	
+}
+#Content > .area2 > .box_calendar > .festival_sample li{
+	border : 1px solid gray;
+	margin-left:2px;
+	width: 330px;
+	height: 150px;
+	float:left;
+}
+
+
+#Content > .area2 > .area_tour1,
+#Content > .area2 > .area_tour2,
+#Content > .area2 > .area_tour3{
+	margin-top: 10px;
+	border : 0px solid olive;
+	width: 1050px;
+	overflow:hidden;
+}
+
+#Content > .area2> .area_tour1 li,
+#Content > .area2> .area_tour2 li,
+#Content > .area2 > .area_tour3 li
+{
+	width: 240px; height: 350px; float: left;
+	border: 0px solid #CCCCCC; 
+	text-align: center; margin-right:3px;
+	margin-top:5px;	
+}
+
+Content > .area2 > .tag li{
+	border : 0px solid pink;
+	float:left;
+}
+
