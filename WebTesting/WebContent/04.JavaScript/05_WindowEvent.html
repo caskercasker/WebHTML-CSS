@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function windOpen(){
+		window.open("http://www.naver.com", "naver", "width=300px, height=200px, scrollbars=no");
+		//URL , 윈도우 이름, 가로/세로 스크롤 
+	}
+	
+	function winOpen1(){
+		window.open("http://localhost/WebTesting/04.JavaScript/04_KeyEvent.html","html", "width=300px, height=200px, scrollbars=no");
+	}
+</script>
+
+</head>
+<body onload="windOpen()">
+	<input type="button" value="클릭" onclick="winOpen1()"/>
+</body>
+</html>
